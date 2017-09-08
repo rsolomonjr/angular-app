@@ -1,1 +1,51 @@
-<DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<style type="text/css" media="screen">
+    body{
+        margin: 0 auto;
+        width: 100%;
+    }
+</style>
+<body>
+
+<div class="container" ng-app="myApp" ng-controller="myCtrl">
+	<!--<select class="form-control">    	
+		<option ng-repeat="type in types track by $index">{{type}} {{ pastacosts[$index] }}</option>
+        
+	</select>
+-->
+    <br>
+	<div class="row" ng-class="proteins ">   	
+	    <div class="col-sm-3">  
+            <label>{{ proteins[0] }}</label>
+            <input type="checkbox"> {{proteincosts[0]}}</input>
+        </div> 
+        <div class="col-sm-3"> 
+            <label>{{ proteins[1] }}</label>
+            <input type="checkbox"> {{proteincosts[1]}}</input>
+        </div>
+        <div class="col-sm-3">  
+            <label >{{ proteins[2] }}</label>
+            <input type="checkbox"> {{proteincosts[2]}}</input>
+        </div>
+    </div>
+    
+    
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.types = ["Spaghetti", "Macaroni", "Fettucini"];
+    $scope.pastacosts = [3.00, 3.00, 3.50]; 
+    $scope.proteins = ["Chicken", "Veal", "Shrimp"];
+    $scope.proteincosts = [3.00, 4.00, 4.50];
+       
+});
+</script>
+
+
+</body>
+</html>
